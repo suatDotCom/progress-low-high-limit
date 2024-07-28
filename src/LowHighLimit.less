@@ -1,0 +1,65 @@
+@default-bar-width: 1vw;
+@default-bar-min-width: 1px;
+@default-bar-height: 5vh;
+@default-bar-min-height: 5px;
+
+.lowHighLimit {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .hoverDescription {
+    transition-property: width;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    .description {
+      display: none;
+      background-color: #3e4c59;
+      color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 0.2rem;
+    }
+
+    &:hover {
+      width: 20px !important;
+      height: 8px !important;
+      .description {
+        display: flex !important;
+      }
+    }
+  }
+
+  .min,
+  .max {
+    width: @default-bar-width;
+    height: @default-bar-height;
+    background-color: #8c8c8c;
+  }
+
+  .optimal {
+    width: @default-bar-width;
+    height: @default-bar-height;
+    background-color: #203e43;
+  }
+
+  .current {
+    width: @default-bar-width;
+    height: @default-bar-height;
+    background-color: #d9d9d9;
+
+    img {
+      position: absolute;
+      top: -4px;
+    }
+  }
+
+  .normal {
+    width: @default-bar-width;
+    height: @default-bar-height;
+    background-color: #d9d9d9;
+  }
+}
